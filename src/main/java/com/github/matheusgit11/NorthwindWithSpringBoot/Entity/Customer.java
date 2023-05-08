@@ -2,6 +2,8 @@ package com.github.matheusgit11.NorthwindWithSpringBoot.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "customers")
 public class Customer {
@@ -40,6 +42,11 @@ public class Customer {
 
     @Column(name = "fax")
     private String fax;
+
+    @Column
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
+
 
     public Customer() {
     }
