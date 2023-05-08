@@ -19,16 +19,13 @@ public class Shipper {
     @Column(name = "phone")
     private String phone;
 
-    @OneToMany(mappedBy = "shipper")
-    private List<Order> orders;
 
     public Shipper() {
     }
 
-    public Shipper(String companyName, String phone, List<Order> orders) {
+    public Shipper(String companyName, String phone) {
         this.companyName = companyName;
         this.phone = phone;
-        this.orders = orders;
     }
 
     public Integer getShipperId() {
@@ -54,12 +51,6 @@ public class Shipper {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 }
+
+

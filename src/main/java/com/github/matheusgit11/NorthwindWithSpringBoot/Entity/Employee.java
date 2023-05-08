@@ -52,9 +52,6 @@ public class Employee {
     @Column(name = "notes")
     private String notes;
 
-    @ManyToOne
-    @JoinColumn(name = "reportsto")
-    private Employee manager;
 
     public Employee() {
     }
@@ -62,7 +59,7 @@ public class Employee {
     public Employee(String lastName, String firstName, String title, LocalDate birthDate
             , LocalDate hireDate, String address, String city, String region
             , String postalCode, String country, String phone, String extension,
-                    String notes, Employee manager) {
+                    String notes) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.title = title;
@@ -76,7 +73,7 @@ public class Employee {
         this.phone = phone;
         this.extension = extension;
         this.notes = notes;
-        this.manager = manager;
+
     }
 
     public Integer getEmployeeId() {
@@ -191,11 +188,4 @@ public class Employee {
         this.notes = notes;
     }
 
-    public Employee getManager() {
-        return manager;
-    }
-
-    public void setManager(Employee manager) {
-        this.manager = manager;
-    }
 }
