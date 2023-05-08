@@ -1,68 +1,39 @@
-package com.github.matheusgit11.NorthwindWithSpringBoot.Entity;
+package com.github.matheusgit11.NorthwindWithSpringBoot.DTO;
 
-import jakarta.persistence.*;
+public class ProductDTO {
 
 
-@Entity
-@Table(name = "products")
-public class Product {
-
-    @Id
-    @GeneratedValue
-    @Column(name = "productid")
-    private Integer productId;
-
-    @Column(name = "productname")
     private String productName;
 
-    @ManyToOne
-    @JoinColumn(name = "supplierid")
-    private Suppliers supplier;
+    private int supplierId;
 
-    @ManyToOne
-    @JoinColumn(name = "categoryid")
-    private Category category;
+    private int categoryId;
 
-    @Column(name = "quantityperunit")
     private String quantityPerUnit;
 
-    @Column(name = "unitprice")
     private int unitPrice;
 
-    @Column(name = "unitsinstock")
     private int unitsInStock;
 
-    @Column(name = "unitsonorder")
     private int unitsOnOrder;
 
-    @Column(name = "reorderlevel")
     private int reorderLevel;
 
-    @Column(name = "discontinued")
     private boolean discontinued;
 
+    public ProductDTO() {
+    }
 
-    public Product(String productName, Suppliers supplier, Category category, String quantityPerUnit, int unitPrice, Short unitsInStock, Short unitsOnOrder, Short reorderLevel, boolean discontinued) {
+    public ProductDTO(String productName, int supplierId, int categoryId, String quantityPerUnit, int unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, boolean discontinued) {
         this.productName = productName;
-        this.supplier = supplier;
-        this.category = category;
+        this.supplierId = supplierId;
+        this.categoryId = categoryId;
         this.quantityPerUnit = quantityPerUnit;
         this.unitPrice = unitPrice;
         this.unitsInStock = unitsInStock;
         this.unitsOnOrder = unitsOnOrder;
         this.reorderLevel = reorderLevel;
         this.discontinued = discontinued;
-    }
-
-    public Product() {
-    }
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
     }
 
     public String getProductName() {
@@ -73,20 +44,20 @@ public class Product {
         this.productName = productName;
     }
 
-    public Suppliers getSupplier() {
-        return supplier;
+    public int getSupplierId() {
+        return supplierId;
     }
 
-    public void setSupplier(Suppliers supplier) {
-        this.supplier = supplier;
+    public void setSupplierId(int supplierId) {
+        this.supplierId = supplierId;
     }
 
-    public Category getCategory() {
-        return category;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getQuantityPerUnit() {

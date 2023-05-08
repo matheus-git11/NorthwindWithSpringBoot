@@ -1,6 +1,5 @@
 package com.github.matheusgit11.NorthwindWithSpringBoot.Controller;
 
-import com.github.matheusgit11.NorthwindWithSpringBoot.Entity.Customer;
 import com.github.matheusgit11.NorthwindWithSpringBoot.Entity.Shipper;
 import com.github.matheusgit11.NorthwindWithSpringBoot.Repository.ShipperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Shipper")
+@RequestMapping("/shipper")
 public class ShipperController {
 
     @Autowired
@@ -27,7 +26,6 @@ public ResponseEntity<?> createShipper(@RequestBody Shipper shipper){
             .buildAndExpand(savedShipper.getShipperId()).toUri();
 
     return  ResponseEntity.created(location).build();
-
 }
 
 @GetMapping
@@ -37,7 +35,6 @@ public ResponseEntity<?> getAllShippers(){
     if(shippers.isEmpty()){
         return ResponseEntity.noContent().build();
     }
-
     return ResponseEntity.ok(shippers);
-}
+    }
 }
