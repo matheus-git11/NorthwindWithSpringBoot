@@ -3,8 +3,6 @@ package com.github.matheusgit11.NorthwindWithSpringBoot.Entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
-
 @Entity
 @Table(name = "order_details")
 public class OrderDetail {

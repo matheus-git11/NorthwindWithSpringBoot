@@ -18,5 +18,5 @@ public class region {
     @OneToMany(mappedBy = "region")
     private List<territories> territories;
 
-    // constructors, getters and setters
+
 }
